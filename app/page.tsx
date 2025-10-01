@@ -4,6 +4,13 @@ import {MovieList} from "@/Components/MovieListComponent";
 import {SearchParams} from "next/dist/server/request/search-params";
 import {FC} from "react";
 import {IGenre} from "@/models/IGenre";
+import {Metadata} from "next";
+
+
+export const metadata: Metadata = {
+    title: "Home",
+    description: "Browse popular and trending movies from TMDB.",
+};
 
 type GenrePairs = Array<[number, IGenre]>;
 type PageProps = {

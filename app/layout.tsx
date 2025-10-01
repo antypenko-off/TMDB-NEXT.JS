@@ -4,7 +4,21 @@ import {Metadata} from "next";
 import {GetGenres} from "@/lib/data.service";
 import Header from "@/Components/HeaderComponent";
 
-export const metadata:Metadata = { title: "Movies", description: "TMDB demo" };
+export const metadata: Metadata = {
+    title: {
+        default: "Movies",
+        template: "%s | Movies",
+    },
+    description: "Demo application using TMDB API with Next.js",
+    openGraph: {
+        title: "Movies",
+        description: "Browse movies from TMDB",
+        siteName: "Movies",
+        locale: "en_US",
+        type: "website",
+    },
+};
+
 
  const  RootLayout =  async ({ children }: { children: React.ReactNode }) => {
         const genres = await GetGenres();
